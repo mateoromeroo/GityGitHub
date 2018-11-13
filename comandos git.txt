@@ -1,0 +1,93 @@
+*OBS: para acceder a una carpeta con comando cd que contenga espacios, poner su nombre
+entre comillas. Ejm: cd "Git y GitHub"
+
+1) Instalación:
+	1.1) ver versión de git: git --version
+	1.2) Configurar y verificar mi user y pass de github
+	(solo se hace la 1ra vez después de instalar github):
+		1.2.1) user: git config --global user.name "name_user"
+		1.2.2) verificar que se configuró bien el user_name: git --list
+		(se ve casi al final el user_name)
+		1.2.3) email: git config --global user.email "my_email"
+		1.2.4) verificar que se configuró bien el user_email:
+			git config --global user.email
+	1.3) manual de ayuda en la consola:
+		git help name_comando (se sale del manual poniendo una "q" y enter).
+
+2) Git workflow: (subir un proyecto):
+
+	* Estructura de árbol de git:
+	1) working directy: mi computadora (nivel local).
+	2) staging area: parte intermedia (alista el proyecto para subir al repositorio de git).
+	3) git directory: repositorio de git
+	OBS: working directy Y staging area son un nivel local y git directory es a nivel de git.
+	
+	* Subir un proyecto (básico):
+	1) Te ubicas en la raíz de tu proyecto.
+	2) git init: creo un repositorio vacío. Solo se ejecuta cuando se va subir un proyecto, 
+	si el proyecto ya está subido ya no es necesario este comando. 
+	Ejm: para pushear lo hacemos defrente.
+	3) git add . o git add -A: añade los archivos al staging area (prepara los archivos para subir).
+	4) git commit -m "mensaje o título del commit (decribe el commit)"
+	5) Crear un repositorio en github y te va a aparecer dos comandos: git remote y git push.
+	6) git remote add origin https://github.com/mateoromeroo/prueba.git : 
+	agrega el proyecto al repositorio creado.
+	7) git push -u origin master : sube ("empuja") el proyecto en local al repositorio de git.
+	la 1ra pusheada nomas se hace con -u origin master, las siguiente solo se pone git push
+
+	* Para las siguientes pusheadas:
+	1) Te ubicas en la raíz de tu proyecto.
+	2) git add . , git add -A o git add archivo_name
+	3) git commit -m "mensaje o título del commit (decribe el commit)"
+	4) git push
+
+
+3) Manejo de commits (versiones de nuestro proyecto en un historial):
+	* commit(versión): Tiene 5 atributos.
+	1) código
+	2) autor
+	3) fecha de creación o modificación
+	4) título o mensaje del commit (git commit -m "este mensaje")
+
+	* comandos: 
+	3.1) git log: te muestra todos los commit(versiones) de tu proyecto.
+	Se sale con "q"
+	3.2) cambiar de commit: git checkout codigo_commit
+	3.3) mueve al último commit: git checkout master
+	3.4) mostrar commits en un txt:
+	git log > name_archivo.txt
+
+4) git reset (borrar commits)
+	*OBS git reset no borra un commit en específico, sino que al ejecutar este
+	comando se ubica en el commit que le indicamos y BORRA TODOS LOS COMMITS
+	QUE ESTÁN EN SU ADELANTE (todas las versiones que le siguen).
+
+	* Son de 3 tipos:
+	1) git reset --soft:
+	- Es el más simple.
+	- No toca el working Área (no borra nuestro código), solo elimina el commit.
+	2) git reset --mixed: No se usa mucho (?)
+	- Borra el Staging Area sin tocar el working Area
+	3) git reset --hard:
+	- Borra todo, tanto el commit, como nuestro código.
+
+	EJM:
+	Si tenemos 3 commit:
+	commit1(su nombre), cod1 -> 1er commit
+	commit2, cod2 -> 2do commit
+	commit3, cod3 -> 3er y último commit (el actual)
+
+	si ejecutamos:
+	git reset --hard cod1
+
+	Entonces, el commit 2 y 3 se borrarán (se borra todo, incluido su código)
+
+
+5) Ramas:
+	5.1) Ver todas nuestras ramas: git branch
+	5.2) Crear una rama: git branch name_rama
+	5.3) cambiar de rama: git checkout name_rama (también sirve el checkout para cambiar de commit)
+
+	
+
+
