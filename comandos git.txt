@@ -28,6 +28,8 @@ entre comillas. Ejm: cd "Git y GitHub"
 	si el proyecto ya está subido ya no es necesario este comando. 
 	Ejm: para pushear lo hacemos defrente.
 	3) git add . o git add -A: añade los archivos al staging area (prepara los archivos para subir).
+	 - git add .  : NO TOMA EN CUENTA LA CREACIÓN DE CARPETAS Y ARCHIVOS.
+	 - git add -A : SI TOMA EN CUENTA LA CREACIÓN DE CARPETAS Y ARCHIVOS.
 	4) git commit -m "mensaje o título del commit (decribe el commit)"
 	5) Crear un repositorio en github y te va a aparecer dos comandos: git remote y git push.
 	6) git remote add origin https://github.com/mateoromeroo/prueba.git : 
